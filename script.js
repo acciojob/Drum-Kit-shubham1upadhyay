@@ -1,6 +1,6 @@
 function playSound(key_code) {
   const audio = document.querySelector(`audio[data-key="${key_code}"]`);
-  const key = document.querySelector(`.key[data-key="${key_Code}"]`);
+  const key = document.querySelector(`.key[data-key="${key_code}"]`);
   
   if(audio)
   {
@@ -10,5 +10,5 @@ function playSound(key_code) {
 }
 
 document.addEventListener('click', (event) => {
-  playSound(event.keyCode);
+  playSound(event.key_code);
 });
