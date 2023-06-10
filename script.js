@@ -1,14 +1,12 @@
 function playSound(key_code) {
-  const audio = document.querySelector(`audio[data-key="${key_code}"]`);
-  const key = document.querySelector(`.key[data-key="${key_code}"]`);
+  const key = document.querySelector(`button[data-key="${key_code.keyCode}"]`);
   
-  if(audio)
+  if (key)
   {
+    const audio = document.querySelector(`audio[data-key="${key_code.keyCode}"]`);
     audio.currentTime = 0;
     audio.play();
   }
 }
 
-document.addEventListener('click', (event) => {
-  playSound(event.key_code);
-});
+window.addEventListener('keydown', playSound);
